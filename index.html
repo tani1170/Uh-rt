@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html data-theme="acid" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/vite.svg"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script type="module" crossorigin src="./assets/main.cb2b9152.js"></script>
+    <link rel="stylesheet" href="./assets/index.e7f58e02.css">
+  </head>
+  <body
+    class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+  >
+    <!-- navigation -->
+    <div
+      class="navbar absolute bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+    >
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label
+            tabindex="0"
+            class="btn btn-ghost lg:hidden"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow"
+          >
+            <li><a>Item 1</a></li>
+            <li tabindex="0">
+              <a
+                class="justify-between"
+              >
+                Parent
+                <svg
+                  class="fill-current"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"
+                  />
+                </svg>
+              </a>
+              <ul
+                class="menu w-56 bg-base-100"
+              >
+                <li><a>Item 1</a></li>
+                <li>
+                  <a class="active"
+                    >Item 2</a
+                  >
+                </li>
+                <li><a>Item 3</a></li>
+              </ul>
+            </li>
+            <li><a>Item 3</a></li>
+          </ul>
+        </div>
+        <a
+          class="text-8xl normal-case text-accent"
+          >UHørt</a
+        >
+      </div>
+      <div
+        class="navbar-center hidden lg:flex"
+      >
+        <ul
+          class="menu menu-horizontal p-0"
+        >
+          <li>
+            <a
+              class="rounded-box hover:bg-primary"
+              >Item 1</a
+            >
+          </li>
+          <li tabindex="0">
+            <a
+              class="rounded-box hover:bg-primary"
+            >
+              Parent
+              <svg
+                class="fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
+                />
+              </svg>
+            </a>
+            <ul
+              class="menu rounded-box w-56 bg-base-100"
+            >
+              <li
+                class="rounded-box hover:bg-secondary"
+              >
+                <a>Item 1</a>
+              </li>
+              <li
+                class="rounded-box hover:bg-secondary"
+              >
+                <a>I have border</a>
+              </li>
+              <li
+                class="rounded-box hover:bg-secondary"
+              >
+                <a>Item 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              class="rounded-box hover:bg-primary"
+              >Item 3</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <a
+          class="btn border-none bg-secondary text-black hover:bg-accent"
+          >Get started</a
+        >
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <div
+      class="hero min-h-screen"
+      style="
+        background-image: url(https://placeimg.com/1000/800/arch);
+      "
+    >
+      <div
+        class="hero-overlay bg-opacity-60"
+      ></div>
+      <div
+        class="hero-content text-center text-neutral-content"
+      >
+        <div
+          class="max-w-md text-accent"
+        >
+          <h1
+            class="mb-5 text-5xl font-bold"
+          >
+            UHØRT
+          </h1>
+          <div class="my-5 text-lg">
+            <p class="mb-5">
+              LANDET NYESTE MUSIK
+            </p>
+            <p class="">
+              17. -19.AUGUST
+            </p>
+            <p>I københavn</p>
+          </div>
+          <button
+            class="pulsate-fwd btn btn-secondary hover:bg-primary"
+          >
+            KØB DIN BILLET NU
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- countdown -->
+    <p
+      id="demo"
+      class="relative bottom-56 grid justify-center text-8xl text-accent"
+    ></p>
+
+    <!-- EVENT button -->
+
+    <div
+      class="my-10 grid justify-center"
+    >
+      <h2
+        class="mb-10 text-5xl text-accent"
+      >
+        PROGRAM 2022
+      </h2>
+      <div class="grid justify-center">
+        <select
+          id="event_btn"
+          onclick="clickdrop()"
+          class="select select-bordered select-primary w-full max-w-xs hover:bg-accent"
+        >
+          <option
+            disabled="disabled"
+            selected="selected"
+          >
+            Vælg dag
+          </option>
+          <div id="drop_event">
+            <option id="tors" class="">
+              <a>Torsdag</a>
+            </option>
+            <option id="fre" class="">
+              <a>Fredag</a>
+            </option>
+            <option id="lor" class="">
+              <a>Lørdag</a>
+            </option>
+          </div>
+        </select>
+      </div>
+    </div>
+
+    <!-- TABLE -->
+
+    <!-- Torsdag event -->
+    <div
+      id="tors_cal"
+      class="mt-10 grid justify-center"
+    >
+      <h1
+        class="mb-10 text-center text-6xl uppercase text-accent"
+      >
+        torsdag
+      </h1>
+      <table class="table w-full">
+        <thead class="">
+          <tr>
+            <th
+              class="bg-secondary"
+            ></th>
+            <th class="bg-secondary">
+              Volumescene
+            </th>
+            <th class="bg-secondary">
+              Gårdscenen
+            </th>
+            <th class="bg-secondary">
+              Skatescenen
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="">
+              17.45-18.15
+            </td>
+            <th class="">$HYBXI</th>
+            <td class=""></td>
+            <td class=""></td>
+          </tr>
+          <tr>
+            <td>18.30-19.00</td>
+            <td></td>
+            <th>Marinna Winter</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>19.15-19-45</td>
+            <th>GRAVA</th>
+            <td></td>
+            <th>The Jerryz</th>
+          </tr>
+          <tr>
+            <td>20.00-20.30</td>
+            <td></td>
+            <th>Jaden Castro</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>20.45-21.15</td>
+            <th>Cyd Williams</th>
+            <th></th>
+            <th>Veiles</th>
+          </tr>
+          <tr>
+            <td>21.30-22.00</td>
+            <th></th>
+            <th>Sosa</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>22.15-22.45</td>
+            <th>Tender Youth</th>
+            <td></td>
+            <th>Offernat</th>
+          </tr>
+          <tr>
+            <td>23.00-23.30</td>
+            <td></td>
+            <th>KONVOJ</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>23.45-00.15</td>
+            <td></td>
+            <td></td>
+            <th>Wordspray</th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Fredag event -->
+    <div
+      id="fre_cal"
+      class="mt-10 grid hidden justify-center"
+    >
+      <h1
+        class="mb-10 text-center text-6xl uppercase text-accent"
+      >
+        Fredag
+      </h1>
+      <table class="table w-full">
+        <thead class="">
+          <tr class="">
+            <th
+              class="bg-secondary"
+            ></th>
+            <th class="bg-secondary">
+              Volumescene
+            </th>
+            <th class="bg-secondary">
+              Gårdscenen
+            </th>
+            <th class="bg-secondary">
+              Skatescenen
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Døre 17.00</th>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>17.45-18.15</td>
+            <th>MALU</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>18.30-19.00</td>
+            <th></th>
+            <th>UBLU</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>19.15-19-45</td>
+            <th>Aland Z</th>
+            <td></td>
+            <th>Feather Mountian</th>
+          </tr>
+          <tr>
+            <td>20.00-20.30</td>
+            <th></th>
+            <th>Esben Svane</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>20.45-21.15</td>
+            <th>Omsorg</th>
+            <th></th>
+            <th>EYJAA</th>
+          </tr>
+          <tr>
+            <td>21.30-22.00</td>
+            <th></th>
+            <th>Maia Maia</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>22.15-22.45</td>
+            <th>Mite</th>
+            <th></th>
+            <th>Sofie1988</th>
+          </tr>
+          <tr>
+            <td>23.00-23.30</td>
+            <th></th>
+            <th>Ju Kaia</th>
+            <th></th>
+          </tr>
+          <tr>
+            <td>23.45-00.15</td>
+            <th>Fadi</th>
+            <th></th>
+            <th>Dwonji</th>
+          </tr>
+          <tr>
+            <td>00.30-01.00</td>
+            <th></th>
+            <th>BONAD</th>
+            <th></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Lordags event -->
+    <div
+      id="lor_cal"
+      class="mt-10 grid hidden justify-center"
+    >
+      <h1
+        class="mb-10 text-center text-6xl uppercase text-accent"
+      >
+        Lørdag
+      </h1>
+      <table class="table w-full">
+        <thead class="">
+          <tr class="">
+            <th
+              class="bg-secondary"
+            ></th>
+            <th class="bg-secondary">
+              Volumescene
+            </th>
+            <th class="bg-secondary">
+              Gårdscenen
+            </th>
+            <th class="bg-secondary">
+              Skatescenen
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Døre kl. 15.30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr class="">
+            <td>16.15-16.45</td>
+            <th>CarlloYABOY</th>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>17.00-17.30</td>
+            <td></td>
+            <th>Lihme</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>17.45-18.15</td>
+            <th>ÈTRE</th>
+            <td></td>
+            <th>Inanis7</th>
+          </tr>
+          <tr>
+            <td>18.30-19.00</td>
+            <td></td>
+            <th>August Høyen</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>19.15-19-45</td>
+            <th>MAS</th>
+            <td></td>
+            <th>Glitchi</th>
+          </tr>
+          <tr>
+            <td>20.00-20.30</td>
+            <td></td>
+            <th>Archon</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>20.45-21.15</td>
+            <th>Babylon Twist</th>
+            <td></td>
+            <th>NikoCorlin</th>
+          </tr>
+          <tr>
+            <td>21.30-22.00</td>
+            <td></td>
+            <th>NØX</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>22.15-22.45</td>
+            <th>LineMarianne</th>
+            <td></td>
+            <th>Skraek</th>
+          </tr>
+          <tr>
+            <td>23.00-23.30</td>
+            <td></td>
+            <th>Alvah</th>
+            <td></td>
+          </tr>
+          <tr>
+            <td>23.45-00.15</td>
+            <td></td>
+            <td></td>
+            <th>Loose Ends</th>
+          </tr>
+          <tr>
+            <td>00.30-01.00</td>
+            <td></td>
+            <th>The Jürgen Clubs</th>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Artist -->
+
+    <div
+      class="mt-10 flex flex-col justify-center"
+    >
+      <div>
+        <h2
+          class="mb-10 grid justify-center text-5xl text-accent"
+        >
+          LINE-UP 2022
+        </h2>
+      </div>
+
+      <div
+        class="flex justify-center gap-10"
+      >
+        <div
+          class="card w-96 bg-base-100 shadow-xl"
+        >
+          <figure>
+            <img
+              src="https://placeimg.com/400/225/arch"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="card-body">
+            <h2
+              class="card-title text-5xl"
+            >
+              Aland Z
+            </h2>
+            <p></p>
+            <div
+              class="card-actions justify-end"
+            >
+              <button
+                class="btn border-none bg-secondary text-black hover:bg-accent"
+              >
+                LÆSE MERE
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card w-96 bg-base-100 shadow-xl"
+        >
+          <figure>
+            <img
+              src="https://placeimg.com/400/225/arch"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="card-body">
+            <h2
+              class="card-title text-5xl"
+            >
+              $HYBXI
+            </h2>
+            <p></p>
+            <div
+              class="card-actions justify-end"
+            >
+              <button
+                class="btn border-none bg-secondary text-black hover:bg-accent"
+              >
+                LÆS MERE
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card w-96 bg-base-100 shadow-xl"
+        >
+          <figure>
+            <img
+              src="https://placeimg.com/400/225/arch"
+              alt="Shoes"
+            />
+          </figure>
+          <div class="card-body">
+            <h2
+              class="card-title text-5xl"
+            >
+              Alvah
+            </h2>
+            <p></p>
+            <div
+              class="card-actions justify-end"
+            >
+              <button
+                class="btn border-none bg-secondary text-black hover:bg-accent"
+              >
+                LÆS MERE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="my-7 flex justify-center"
+      >
+        <button
+          class="btn border-none bg-accent text-black hover:bg-primary"
+        >
+          Se alle artister
+        </button>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
